@@ -1,0 +1,176 @@
+
+.page{
+    min-height: 100vh;
+    display: grid;
+
+    grid-template-rows: 5rem 48px 100% 1fr;
+
+    grid-template-areas: 
+    "header  header  header"
+    " nav     nav     nav  "
+    " main   main     main "
+    "footer  footer  footer";
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    background-color: antiquewhite;
+
+    /* overflow: scroll; */
+}
+.board-container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid rgb(171, 171, 171);
+    background-color: rgba(236, 236, 236, 0.585);
+    width: 90%;
+    max-width: 800px;
+    height: 95%;
+}
+.profile-container{
+    display: flex;
+    /* border: 2px solid rebeccapurple; */
+    /* border-radius: 10px; */
+}
+.profile-image{
+    /* border: 2px solid gainsboro; */
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/img/cache_b638c94d-b28f-4f68-cf8f-8c3a503df572.png);
+}
+.nickname{
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 30%;
+}
+.status{
+    flex: 1;
+    border-left: 10px solid gainsboro;
+    height: 40px;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+.status td{
+    text-align: center;
+    font-size: 12px;
+
+}
+.board-title{
+    border: 2px solid gainsboro;
+    width: 100%;
+    height: 40px;
+
+}
+.board-title ul{
+    list-style: none;
+}
+.board-detail{
+    border: 2px solid gainsboro;
+    flex: 1;
+}
+.comment-container{
+    background-color: gainsboro;
+    /* border-radius: 10px; */
+}
+
+.comment-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid rgb(171, 171, 171);
+    border-radius: 10px;
+    margin: 10px;
+    /* min-height: 110px; */
+    
+}
+.comment-profile-image{
+    display: inline;
+    /* border: 2px solid rebeccapurple; */
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/img/cache_b638c94d-b28f-4f68-cf8f-8c3a503df572.png);
+}
+.comment-nickname{
+    padding-top: 5px;
+    height: 30px;
+    font-size: 14px;
+}
+.comment-box{
+    width: 100%;
+    border-top: 1px solid rgb(171, 171, 171);
+}
+.comment{
+    min-height: 40px;
+    height: 70%;
+}
+.comment-status{
+    display: flex;
+    border-top: 1px solid rgb(171, 171, 171);
+    /* display: block; */
+    height: 30%;
+    font-size: 10px;
+    
+}
+.comment-status input[type="button"]{
+    border: 0;
+    background-color: rgba(240, 248, 255, 0);
+    padding-right: 10px;
+    transition: 0.3s;
+}
+.comment-status input[type="button"]:hover{
+    transform: scale(1.1);
+}
+.comment-status input[type="button"]:active{
+    transform: scale(1.3);
+}
+.comment-status input{
+    padding: 0;
+}
+.comment-status form{
+    margin-left: auto;
+    margin-right: 10px;
+}
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+    margin-top: 10px;            
+
+}
+.comment-form input[type="text"]{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0;
+    border: 0;
+    outline: none;
+    height: 100px;
+}
+.options{
+    /* border: 1px solid rebeccapurple; */
+    text-align: end;
+}
+.comment-form input[type="submit"]{
+    border: 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.comment-form input[type="submit"]:hover{
+    transform: scale(1.1);
+}
+.comment-form input[type="submit"]:active{
+    transform: scale(1.3);
+}

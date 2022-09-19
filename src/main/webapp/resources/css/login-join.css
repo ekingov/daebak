@@ -1,0 +1,70 @@
+.login-terms{
+    grid-area: main;    
+
+}
+.login-t{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    
+}
+#step2 {
+    width: 300px;
+    height: 50px;    
+    margin-top: 50px;
+    border: 2px solid rgb(255, 192, 203);
+    background-color: rgb(255, 192, 203);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(94, 92, 92);
+    
+}
+#step1 {
+    width: 300px;
+    height: 50px;    
+    margin-top: 50px;
+    border: 2px solid rgb(255, 192, 203);
+    background-color: rgb(255, 192, 203, 0.3);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(94, 92, 92);
+    
+}
+.per-information{
+    display: flex;
+    flex-direction: column;
+    grid-area: main;  
+    
+}
+form{
+    width: 300px;
+    margin: 0 auto;
+}
+#peri{
+    margin-top: 20px;
+    border: none;
+    border-bottom: 1px solid rgb(255, 192, 203);
+}
+#peri:hover{
+    background-color: rgb(255, 192, 203);
+    cursor: pointer;
+}
+#peri:focus{
+    outline: 2px solid pink ;
+}
+
+#joinbut{
+    margin-left: 900px;
+    margin-top: 30px;
+    background-color: rgb(255, 194, 204, 0.5);
+    border: none;
+    /* border-radius: 10px; */
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+}
+#joinbut:hover{
+    background-color: pink;
+    cursor: pointer;
+}

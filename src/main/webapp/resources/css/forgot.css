@@ -1,0 +1,22 @@
+.page-f{
+    grid-area: main;
+    margin: 0 auto;
+}
+.forget{
+    grid-area: main;
+    border-left: 6px solid pink;
+    font-size: 2rem;
+    height: 3rem;
+    margin-left: -100px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-left: 10px;
+}
+
+.forgot-hint{
+  
+}
+
+#fh{
+    margin-bottom: 30px;
+}

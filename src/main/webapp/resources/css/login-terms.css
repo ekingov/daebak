@@ -1,0 +1,52 @@
+/* 회원가입 페이지-약관(TERMS)*/
+/* ---------lonin-terms --------*/
+.login-terms{
+    grid-area: main;    
+
+}
+.login-t{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    
+}
+#step1 {
+    width: 300px;
+    height: 50px;    
+    margin-top: 5%;
+    border: 2px solid rgb(255, 192, 203);
+    background-color: rgb(255, 192, 203);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(94, 92, 92);
+    
+}
+#step2 {
+    width: 300px;
+    height: 50px;    
+    margin-top: 5%;
+    border: 2px solid rgb(255, 192, 203);
+    background-color: rgb(255, 192, 203, 0.3);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(94, 92, 92);
+    
+}
+.terms-dialog{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+}
+.terms{
+    width: 60%;
+    border: 2px solid rgb(255, 192, 203);
+    margin: 15px auto;
+    padding: 15px;
+    
+}
+#agree{
+    padding-left: 70%;
+}
+

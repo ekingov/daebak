@@ -1,0 +1,234 @@
+ul, li {
+    list-style: none;
+    padding:0px;
+}
+
+/* ----------정육점 사진과 주소 -------------------------*/
+.main{
+    display: flex;
+    margin: 0 auto;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.address{
+    flex-direction: column;
+    height: 160px;
+    width: 500px;
+    background-color: rgba(191, 88, 117, 0.3);
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 0.5rem;
+    padding-top: 150px;
+    padding-bottom: 2rem;
+    z-index: 1;
+    margin-bottom: 1rem;
+    margin-top: 30px;
+    transform: translate(600px, 0px);
+   
+}
+.store-img {
+    width: 200px;
+    height: 200px;
+    padding-top: 150px;
+    position: absolute;
+    z-index: 2;
+    transform: translate(750px, -200px);
+    object-fit: cover;
+    /* overflow: hidden; */
+  
+}
+
+#title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0 auto;
+}
+
+
+#copy{
+    background-color: rgb(251, 215, 225);
+}
+#copy:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+/* -----modal---------- */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 1300px;
+    right: 0;
+    top: 0;
+    bottom:0;
+    
+}
+.dialog {
+    text-align: center;
+    line-height: 2.5rem;
+    background-color: rgb(251, 215, 225);
+    border-radius: 6px 0px 6px 0px;
+    padding: 8px;
+    padding-top:20px;
+}
+.cart{
+    border: 2px solid rgb(226, 103, 138);
+    background-color: rgb(226, 103, 138, 0.5);
+    border-radius: 5px;
+}
+
+.cart:hover {
+    cursor: pointer;
+    background-color:rgb(226, 103, 138);
+}
+
+/*------ info2 - 상품설명 탭----------- */
+.info2 {
+    display: grid;
+    width: 60%;
+    margin: 0 auto;  
+}
+.info-product {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.info-item {
+    width: 20%;
+    justify-content: center;
+	flex-grow: 1;
+    flex-basis: 60%;
+	background: rgb(251, 215, 225);
+    padding: 1em;
+    font-size: 1.2rem;
+	font-weight: bold;	
+    color: #555;
+	text-decoration: none;
+	text-align: center;
+    
+}
+
+.info-item:hover {
+    background-color: rgb(214, 168, 181);
+    transition: 0.2;
+}
+
+.categories {
+    display: flex;
+    
+ 
+}
+
+.cate-item {
+    display: inline-flex;
+    justify-content: center;
+	flex-grow: 1;
+    padding: 1em;
+    font-size: 1.2rem;
+	font-weight: bold;	
+    color: #555;
+	text-decoration: none;
+	text-align: center;
+    border-radius: 20px;
+    
+}
+.cate-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.goods{
+    background-color: rgb(251, 215, 225, 0.3);
+}
+.scroll{
+    font-weight: bold;
+    color: rgb(93, 88, 88);
+    font-size: 20px;
+    margin-left: 10% ;
+}
+
+.each-pro {
+    display: flex;
+    align-items: flex-end;
+    background-color: rgb(251, 215, 225, 0.5);
+    width: 650px;
+    margin: 10px auto;
+}
+
+.each-img{
+    width: 200px;
+    height: 150px;
+    margin-right: 2rem;
+}
+span{
+    font-weight:bold;
+}
+p{
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-right: 20%;
+}
+button {
+    height: 40px;
+    margin-bottom: 2rem;
+    border: 0;
+    outline: 0;
+    border-radius: 2px;
+    background-color: rgb(251, 215, 225);
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(251, 215, 225);;
+}
+
+/* ---------store-inf--------------- */
+.detaile-str{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    margin: 0 auto;
+    background-color:rgb(248, 201, 214); 
+    
+}
+
+.str{
+    flex-grow: 1;
+    
+}
+
+.str-info {
+    font-size: 1.4rem;
+    line-height: 2em;
+    flex-grow: 1;
+    border-bottom: 2px dotted rgb(221, 140, 163);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 3px;
+    padding-left: 10px;
+    
+    
+}
+/* ---------review---------- */
+.review {
+    display: flex;
+}
+
+table {
+    width: 60%;
+    border: 1px solid rgb(230, 156, 202);
+    padding: 3px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 2rem;
+}
+   
+
