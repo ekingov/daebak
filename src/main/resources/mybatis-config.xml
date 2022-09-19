@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!-- <environments default="development">
+  
+    <environment id="development">
+    
+      <transactionManager type="JDBC"/>
+      
+     	<dataSource type="POOLED">
+     		<property name="driver" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+        	<property name="url" value="jdbc:log4jdbc:oracle:thin:@db20220609152312_high?TNS_ADMIN=/Library/opt/OracleCloudWallet/ATP"/>
+        	<property name="username" value="ADMIN"/>
+        	<property name="password" value="Rlarldnd5345411!"/>
+     	</dataSource>
+      	<dataSource type="UNPOOLED">
+        <property name="driver" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+        <property name="url" value="jdbc:log4jdbc:oracle:thin:@db20220609152312_high?TNS_ADMIN=/Library/opt/OracleCloudWallet/ATP"/>
+        <property name="username" value="ADMIN"/>
+        <property name="password" value="Rlarldnd5345411!"/>
+      </dataSource>
+    </environment>
+  </environments>
+  -->
+  
+
+</configuration>

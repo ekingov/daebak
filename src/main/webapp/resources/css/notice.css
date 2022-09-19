@@ -1,0 +1,150 @@
+
+/* grid 적용 */
+.page{
+        min-height: 100vh;
+        display: grid;
+
+        grid-template-rows: 5rem 56px 1fr 10%;
+
+        grid-template-areas: 
+        "header  header  header"
+        " nav     nav     nav  "
+        " main   main     main "
+        "footer  footer  footer";
+
+}
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ notice grid 적용 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.notice-container{
+    display: grid;
+    grid-template-areas: "notice-name.     .    search search"
+                         "notice notice notice notice notice"
+                         "  .       .     .       .  indexer"
+                         "  .     pager  pager  pager    .  ";
+
+}
+.notice-name{
+    grid-area: notice-name;
+    align-self: center;
+
+    margin-left: 10px;
+    border-left: 10px solid pink;
+    padding-left: 10px;
+}
+.search-form{
+    grid-area: search;
+    justify-content: center;
+    align-self: center;
+}
+.notice{
+    grid-area: notice;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+.indexer{
+    grid-area: indexer;
+}
+.pager{
+    grid-area: pager;
+    
+    display: flex;
+
+    justify-content: center;
+}
+.main{
+    background-color: white;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-container{
+    display: flex;         
+    width: 100%;
+    height: 750px;
+
+}
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ aside bar ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.aside-bar{
+    border: 2px solid rgba(128, 128, 128, 0.308);
+    border-radius: 20px;
+    width: 20%;
+    margin-left: 6px;
+    margin-right: 6px;
+
+    box-shadow: 0 0 1px 1px ghostwhite;
+}
+
+.aside-menu{
+    list-style: none;
+    padding-left: 0px;
+    
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+}
+.aside-menu-item{
+    
+    border-radius: 10px;
+    width: 90%;
+    margin-top: 20px;
+    padding: 7px;
+
+    border-bottom: 2px solid pink;
+
+    transition: 0.3s;
+}
+.aside-menu-item:hover, .aside-menu-item:active{
+
+    box-shadow: 0 0 2px 1px pink;
+
+    transform: scale(1.1);
+}
+.aside-menu-link{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: block;
+}
+.aside-menu-item:nth-of-type(1){
+    box-shadow: 0 0 2px 1px pink;
+    background-color: rgba(255, 192, 203, 0.401);
+}
+
+.notice-container{
+    border: 2px solid rgba(128, 128, 128, 0.308);
+    border-radius: 20px;
+    
+    width: 80%;
+    margin-right: 6px;
+
+    box-shadow: 0 0 1px 1px ghostwhite;
+
+    background-color: rgba(255, 255, 255, 0.309);
+}
+.indexer{
+    justify-self: center;
+}
+
+.pager{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+.-list-{
+    margin-bottom: 0px;
+    padding-left: 0px;
+    
+    display: flex;
+    list-style: none;
+    
+}
+.-list- a{
+    text-decoration: none;
+    color: black;
+}

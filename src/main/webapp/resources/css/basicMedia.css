@@ -1,0 +1,26 @@
+@media(max-width : 900px){
+    .search-form input[type='search']{
+        width: 150px;
+    }
+    .header-item{
+        justify-content: space-evenly;
+    }
+    .header-menu-item:nth-of-type(1){
+        margin-left: 0;  
+        border-radius: 20px;
+    }
+    .header-menu-link{
+        padding: 1px;
+        font-size: 12px;
+    }
+    .header-menu-link span{
+        width: 0.1px;
+        overflow: hidden;
+    }
+    .header-menu-icon{
+        padding: 0;
+    }
+}
+@media(max-width : 510px){
+
+}
