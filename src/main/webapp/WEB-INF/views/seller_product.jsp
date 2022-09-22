@@ -236,6 +236,7 @@
                     <th class="tg-0pky">부위</th>
                     <th class="tg-0pky">상품명</th>
                     <th class="tg-0pky">판매가</th>
+                    <th class="tg-0pky">수정</th>
                 </tr>
             </thead>
             <tbody>
@@ -248,6 +249,7 @@
                         <td>${product.meatPart}</td>
                         <td>${product.productName}</td>
                         <td>${product.productPrice}</td>
+                        <td><button type="button" onclick="location.href='/seller_product/${product.productNum};'">수정</button></td>
                     </tr>
                 </c:forEach>
             </tbody>
