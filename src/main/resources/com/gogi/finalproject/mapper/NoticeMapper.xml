@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+  <mapper namespace="com.gogi.finalproject.mapper.NoticeMapper">    
+
+    <select id="selectAllList" resultType="com.gogi.finalproject.domain.NoticeVO">
+        SELECT /*+ index_desc(NOTICE) */ *
+        FROM NOTICE
+        OFFSET (#{currPage} - 1) * #{amount} ROWS
+        FETCH NEXT #{amount} ROWS ONLY
+    </select>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT /*+ index(NOTICE) */ count(NOTICE_NUM)
+        FROM NOTICE
+    </select>
+
+  </mapper>

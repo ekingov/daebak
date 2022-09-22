@@ -33,7 +33,7 @@ public class QnaController {
 	
 	
 	// ----------------------목록 조회----------------------------
-	@GetMapping
+	@GetMapping("/list")
 	public void listPerPage(Criteria cri, Model model) throws ControllerException{
 		log.trace("listPerPage(cri, model) invoked.");
 		
