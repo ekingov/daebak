@@ -1,0 +1,84 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: lightgray;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+
+a {
+    text-decoration: solid;
+    color: black;
+    font-weight: bold;
+
+    
+}
+
+.logo {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 150px;
+    height: 100px;
+
+}
+
+.logo_admin{
+    padding-top: 50px;
+    font-size: 20px;
+    flex-shrink: 0;
+    
+    
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.nav_menu {
+    display: flex;
+    flex-shrink: 0;
+
+
+    list-style: none;
+
+}
+
+.nav_sub {
+    
+}
+
+.sub_menu {
+
+}
+
+
+.menu_button {
+
+    
+    align-self: flex-end;
+    background-color: grey;
+
+    
+
+    border: 1px solid white;
+    padding: 20px 40px;
+    
+}
+
+.menu_button:hover {
+    background-color: lightgray;
+}
+
+footer {
+    height: 200px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
