@@ -12,9 +12,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="resources/css/basic.css">
-    <link rel="stylesheet" href="resources/css/basicMedia.css">
-    <link rel="stylesheet" href="resources/css/qna.css">
+    <link rel="stylesheet" href="/resources/css/basic.css">
+    <link rel="stylesheet" href="/resources/css/basicMedia.css">
+    <link rel="stylesheet" href="/resources/css/qna.css">
 
 </head>
 
@@ -83,7 +83,7 @@
                 <div class="aside-bar">
                     <ul class="aside-menu">
                         <li class="aside-menu-item">
-                            <a href="notice.html" class="aside-menu-link" >공지사항</a>
+                            <a href="/notice/list" class="aside-menu-link" >공지사항</a>
                         </li>
                         <li class="aside-menu-item">
                             <a href="qna.html" class="aside-menu-link">QnA</a>
