@@ -57,7 +57,7 @@
                 </li>
                 <li class="header-menu-item">|</li>
                 <li class="header-menu-item">
-                    <a href="" class="header-menu-link">고객센터</a>
+                    <a href="/notice/list" class="header-menu-link">고객센터</a>
                 </li>
             </ul>
         </div>

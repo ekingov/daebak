@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gogi.finalproject.domain.Criteria;
+import com.gogi.finalproject.domain.NoticeDTO;
 import com.gogi.finalproject.domain.NoticeVO;
 import com.gogi.finalproject.domain.PageDTO;
+import com.gogi.finalproject.exception.ControllerException;
+import com.gogi.finalproject.exception.ServiceException;
 import com.gogi.finalproject.service.NoticeService;
 
 import lombok.NoArgsConstructor;
@@ -28,16 +31,35 @@ public class NoticeController {
 	private NoticeService service;
 
 	@GetMapping("/list")
-	public void listPerPage(Criteria cri, Model model) throws Exception {
+	public void listPerPage(Criteria cri, Model model) throws ControllerException {
 		log.trace("list() invoked.");
 		
-		List<NoticeVO> list = this.service.getList(cri);
-		model.addAttribute("list", list);
+		try {
+			List<NoticeVO> list = this.service.getList(cri);
+			model.addAttribute("list", list);
+			
+			PageDTO pageDTO = new PageDTO(cri, this.service.getTotal());
+			model.addAttribute("pageMaker", pageDTO);
+		} catch (ServiceException e) {
+			throw new ControllerException(e);
+		}
+
+	} // listPerPage
+	
+	@GetMapping("/getNotice")
+	public void getNotice(NoticeDTO dto, Model model) throws ControllerException {
+		log.trace("getNotice({}, {}) invoked.", dto, model);
 		
-		PageDTO pageDTO = new PageDTO(cri, this.service.getTotal());
-		model.addAttribute("pageMaker", pageDTO);
-
-
-	}
+		try {
+			NoticeVO vo = this.service.getNotice(dto);
+			
+			model.addAttribute("notice", vo);
+		} catch(Exception e) {
+			throw new ControllerException(e);
+		}
+		
+	} // getNotice
+	
+	
 
 } // end class

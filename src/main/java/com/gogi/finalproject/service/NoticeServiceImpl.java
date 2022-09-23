@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gogi.finalproject.domain.Criteria;
+import com.gogi.finalproject.domain.NoticeDTO;
 import com.gogi.finalproject.domain.NoticeVO;
+import com.gogi.finalproject.exception.DAOException;
+import com.gogi.finalproject.exception.ServiceException;
 import com.gogi.finalproject.mapper.NoticeMapper;
 
 import lombok.NoArgsConstructor;
@@ -25,20 +28,40 @@ public class NoticeServiceImpl implements NoticeService {
 
 	
 	@Override
-	public List<NoticeVO> getList(Criteria cri) throws Exception {
-		log.trace("getList() invoked.");
-		List<NoticeVO> list = this.mapper.selectAllList(cri);
-		
-		return list;
+	public List<NoticeVO> getList(Criteria cri) throws ServiceException {
+		log.trace("getList({}) invoked.", cri);
+		try {
+			List<NoticeVO> list = this.mapper.selectAllList(cri);
+			
+			return list;
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
 
+	} // getList
+
+
+	@Override
+	public int getTotal() throws ServiceException {
+		log.trace("getTotal() invoked.");
+		
+		try {
+			return this.mapper.getTotalCount();
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
 	}
 
 
 	@Override
-	public int getTotal() throws Exception {
-		log.trace("getTotal() invoked.");
-		
-		return this.mapper.getTotalCount();
-	} // getList
+	public NoticeVO getNotice(NoticeDTO dto) throws ServiceException {
+		log.trace("getNotice({}) invoked.", dto);
+
+		try {
+			return this.mapper.selectListOne(dto);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+	} // getTotal
 
 } // end class

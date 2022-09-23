@@ -81,9 +81,12 @@
             <div class="main-container">
 
                 <div class="aside-bar">
+                    <ul class="aside-menu-title">
+                        <li class="aside-menu-title-item"><p>고객센터</p></li>
+                    </ul>
                     <ul class="aside-menu">
-                        <li class="aside-menu-item">
-                            <a href="notice.html" class="aside-menu-link" >공지사항</a>
+                        <li class="aside-menu-item-selected">
+                            <p class="aside-menu-link" style="margin-bottom: 0;">공지사항</p>
                         </li>
                         <li class="aside-menu-item">
                             <a href="/qna/list" class="aside-menu-link">QnA</a>
@@ -126,7 +129,7 @@
                                 <c:forEach var="notice" items="${list}">
                                     <tr>
                                         <td>${notice.noticeNum}</td>
-                                        <td><a href="/notice/get?noticeNum=${notice.noticeNum}">${notice.title}</a></td>
+                                        <td><a href="/notice/getNotice?noticeNum=${notice.noticeNum}">${notice.title}</a></td>
                                         <td>관리자</td>
                                         <td> <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${notice.registerDate}" /></td>
                                         <td></td>
@@ -145,9 +148,9 @@
                             <span class="btn btn-prev"><a href="/notice/list?currPage=${pageMaker.startPage - 1}">이전</a></span>
                         </c:if>
                             
-                        <ul class="-list-">
+                        <ul class="pageList">
                             <c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                                <li class=${pageMaker.cri.currPage == pageNum ? 'currPage' : ''}><a class="-text-" href="/notice/list?currPage=${pageNum}">${pageNum}</a></li>
+                                <li class=${pageMaker.cri.currPage == pageNum ? 'currPage' : ''}><a class="-text-" href="/notice/list?currPage=${pageNum}" style="padding: 3px 6px; margin: 3px; font-size: 20px;">${pageNum}</a></li>
                             </c:forEach>
                         </ul>
                             
@@ -167,7 +170,8 @@
 
     </div>
     
-    <script src="/js/clickMenuHandler.js"></script> 
+    <script src="/resources/js/clickMenuHandler.js"></script> 
+    <script src="/resources/js/getResult.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
