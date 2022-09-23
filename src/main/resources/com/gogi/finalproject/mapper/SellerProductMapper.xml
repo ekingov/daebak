@@ -21,12 +21,24 @@
 	    FROM product1
 	</select>
 	
-	<!-- <insert id="insert">
-		INSERT INTO qna1()
-	</insert> -->
 	
 	<select id="select" resultType="com.gogi.finalproject.domain.SellerProductVO">
 		SELECT * FROM product1 WHERE product_num = #{ProductNum}
 	</select>
+	
+	<insert id="insert">
+        INSERT INTO product1(origin, unit, meat_type, meat_part, product_name, product_price, store_id)
+        VALUES( #{origin}, #{unit}, #{writer}, #{writer}, #{writer}, #{writer}, #{writer}, #{writer}, #{writer} )
+    </insert>
+
+
+    <insert id="insertSelectKey">
+        <selectKey keyProperty="bno" order="BEFORE" resultType="int">
+            SELECT "ISEQ$$_256756".nextval FROM dual
+        </selectKey>
+
+        INSERT INTO tbl_board(bno, title, content, writer)
+        VALUES( #{bno}, #{title}, #{content}, #{writer} )        
+    </insert>
 
 </mapper>

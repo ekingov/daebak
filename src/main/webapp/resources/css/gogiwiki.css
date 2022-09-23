@@ -71,7 +71,7 @@ grid-template-areas:
 
 label[for="cow"]{
     content: "";
-    background-image: url(/svg/cow-icon.svg);
+    background-image: url(/resources/svg/cow-icon.svg);
     width: 50px;
     height: 50px;
 
@@ -85,7 +85,7 @@ label[for="cow"]:active{
 }
 label[for="pig"]{
     content: "";
-    background-image: url(/svg/pig-icon.svg);
+    background-image: url(/resources/svg/pig-icon.svg);
     width: 50px;
     height: 50px;
 
@@ -159,7 +159,7 @@ label[for="pig"]:active{
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-image: url(/svg/pork.svg);
+    background-image: url(/resources/svg/pork.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -182,7 +182,7 @@ label[for="pig"]:active{
     margin-top: 10px;
 
     content: "";
-    background-image: url(/img/cache_b638c94d-b28f-4f68-cf8f-8c3a503df572.png);
+    background-image: url(/resources/img/cache_b638c94d-b28f-4f68-cf8f-8c3a503df572.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
