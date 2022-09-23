@@ -19,4 +19,14 @@ public class GogiwikiController {
 		log.info("고기 위키 페이지입니다.");
 	}
 	
+	@GetMapping("/cow")
+	public void cowHandler() {
+		log.info("소 선택입니다.");
+	}
+	
+	@GetMapping("/pig")
+	public void pigHandler() {
+		log.info("돼지 선택입니다.");
+	}
+	
 } // end class

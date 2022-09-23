@@ -7,11 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gogi.finalproject.domain.Criteria;
 import com.gogi.finalproject.domain.PageDTO;
-import com.gogi.finalproject.domain.QnaVO;
+import com.gogi.finalproject.domain.SellerProductDTO;
 import com.gogi.finalproject.domain.SellerProductVO;
 import com.gogi.finalproject.exception.ControllerException;
 import com.gogi.finalproject.exception.ServiceException;
@@ -49,26 +51,26 @@ public class SellerProductController {
 		}
 		
 	}
-	// ----------------------글쓰기----------------------------
-//	@PostMapping("/register")
-//	public String register(QnaDTO dto, RedirectAttributes rttrs) throws ControllerException {
-//		log.trace("register({}) invoked.", dto);
-//		
-//		try {			
-//			boolean isRegister = this.service.register(dto);
-//			log.info("\t+ isRegister: {}", isRegister);
-//			
-//			// 1. Session Scope 에 아래의 이름과 값으로 바인딩해서 전달(공유)
-////			rttrs.addFlashAttribute("result", (isRegister)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
-//			
-//			// 2. 권장: Get방식의 전송파라미터(즉, Query String 형태로 전달, 예 ?result=FAILURE)
-//			rttrs.addAttribute("result", (isRegister)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
-//			
-//			return "redirect:/board/list";		// Re-direct to the board list.
-//		} catch(Exception e) {
-//			throw new ControllerException(e);
-//		} // try-catch
-//	} // register
+	// ----------------------상품 추가----------------------------
+	@PostMapping("/register")
+	public String register(SellerProductDTO dto, RedirectAttributes rttrs) throws ControllerException {
+		log.trace("register({}) invoked.", dto);
+		
+		try {			
+			boolean isRegister = this.service.register(dto);
+			log.info("\t+ isRegister: {}", isRegister);
+			
+			// 1. Session Scope 에 아래의 이름과 값으로 바인딩해서 전달(공유)
+//			rttrs.addFlashAttribute("result", (isRegister)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
+			
+			// 2. 권장: Get방식의 전송파라미터(즉, Query String 형태로 전달, 예 ?result=FAILURE)
+			rttrs.addAttribute("result", (isRegister)? "SUCCESS("+dto.getProductNum()+")" : "FAILURE");
+			
+			return "redirect:/seller_product";		// Re-direct to the board list.
+		} catch(Exception e) {
+			throw new ControllerException(e);
+		} // try-catch
+	} // register
 	
 	
 	// servlet-context.xml 파일에, <view-controller> 태그로 대체
