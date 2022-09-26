@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gogi seller product</title>
+    <title>gogi seller product add</title>
     <script src="https://kit.fontawesome.com/a8031502e9.js" crossorigin="anonymous"></script>
 
 
@@ -186,7 +186,7 @@
 
             $('#productAdd').on('click', function () {
                 // [ GET /board/register ] Request
-                location.href = "/seller_product/new";
+                location.href = "/seller_product/new?currPage=${pageMaker.cri.currPage}";
             }); // .onclick
 
         }); // .jq
@@ -226,68 +226,39 @@
     </header>
 
     <div class="wrapper">
-        <h1>상품 관리</h1>
+        <form action="/board/register" method="POST">
+            <!-- 등록 처리시에는, 페이징과 관련된 현재페이지 기준값 전송파라미터를 같이 전송하면 안됨! -->
+            <!-- 게시판 목록의 가장 처음페이지로 이동되게 해야, 새로이 등록된 게시글을 확인할 수 있기 때문 -->
+            <!-- <input type="hidden" name="currPage" value="${param.currPage}"> -->
 
-        <form class="search-form header-item" action="">
-            <input type="search">
-            <input type="submit" value="찾기">
-        </form>
-
-        <div class="content_button">
-            <button type="button" id="productAdd">+ 상품 추가</button>
-            <button type="button" id="productDelete">- 상품 삭제</button>
-        </div>
-
-        <table class="tg">
-            <thead>
+            <table>
                 <tr>
-                    <th class="tg-0pky">번호</th>
-                    <th class="tg-0pky">원산지</th>
-                    <th class="tg-0pky">단위</th>
-                    <th class="tg-0pky">카테고리</th>
-                    <th class="tg-0pky">부위</th>
-                    <th class="tg-0pky">상품명</th>
-                    <th class="tg-0pky">판매가</th>
-                    <th class="tg-0pky">수정</th>
+                    <td><label for="title">제목</label></td>
+                    <td><input type="text" name="title" size="50" placeholder="제목을 입력하세요" required></td>
                 </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="product" items="${list}">
-                    <tr>
-                        <td>${product.productNum}</td>
-                        <td>${product.origin}</td>
-                        <td>${product.unit}</td>
-                        <td>${product.meatType}</td>
-                        <td>${product.meatPart}</td>
-                        <td>${product.productName}</td>
-                        <td>${product.productPrice}</td>
-                        <td><button type="button" onclick="location.href='/seller_product/${product.productNum};'">수정</button></td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-        <div class="indexer">
-            <div><span class="">${pageMaker.cri.currPage}</span> / ${pageMaker.realEndPage} pages</div>
-        </div>
 
-        <div class="pager">
-            <c:if test="${pageMaker.prev}">
-                <span class="btn btn-prev"><a href="/seller_product?currPage=${pageMaker.startPage - 1}">이전</a></span>
-            </c:if>
+                <tr>
+                    <td><label for="content">내용</label></td>
+                    <td><textarea name="content" cols="52" rows="10" placeholder="내용을 입력하세요" required></textarea></td>
+                </tr>
 
-            <ul class="-list-">
-                <c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                    <li class=${pageMaker.cri.currPage==pageNum ? 'currPage' : '' }><a class="-text-"
-                            href="/seller_product?currPage=${pageNum}">${pageNum}</a></li>
-                </c:forEach>
-            </ul>
+                <tr>
+                    <td><label for="writer">작성자</label></td>
+                    <td><input type="text" name="writer" size="20" placeholder="작성자" required></td>
+                </tr>
 
-
-            <c:if test="${pageMaker.next}">
-                <span class="btn btn-next"><a href="/seller_product?currPage=${pageMaker.endPage + 1}">다음</a></span>
-            </c:if>
-
-        </div>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" id="submitBtn">SUBMIT</button>
+                        <button type="button" id="listBtn">LIST</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
     <footer>
         <div>Copyrightⓒ gogi. All Right Reserved.</div>
