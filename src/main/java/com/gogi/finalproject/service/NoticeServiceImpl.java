@@ -64,4 +64,16 @@ public class NoticeServiceImpl implements NoticeService {
 		}
 	} // getTotal
 
+
+	@Override
+	public boolean register(NoticeDTO dto) throws ServiceException {
+		log.trace("register({}) invoked.", dto);
+
+		try {
+			return this.mapper.register(dto) == 1;
+		} catch(Exception e) {
+			throw new ServiceException(e);
+		}
+	} // resigter
+
 } // end class

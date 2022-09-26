@@ -17,4 +17,7 @@ public interface NoticeService {
 	// 3. 게시물 상세 조회
 	public abstract NoticeVO getNotice(NoticeDTO dto) throws ServiceException;
 
+	// 4. 게시물 등록
+	public abstract boolean register(NoticeDTO dto) throws ServiceException;
+	
 } // end interface

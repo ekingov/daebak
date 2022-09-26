@@ -17,5 +17,8 @@ public interface NoticeMapper {
 
 	// 3. 1개의 게시글 조회
 	public abstract NoticeVO selectListOne(NoticeDTO dto) throws DAOException;
+	
+	// 4. 게시글 작성
+	public abstract Integer register(NoticeDTO dto) throws DAOException;
 		
 } // end interface
