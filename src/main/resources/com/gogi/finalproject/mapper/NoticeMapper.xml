@@ -20,7 +20,12 @@
     </select>
 
     <select id="selectListOne" resultType="com.gogi.finalproject.domain.NoticeVO">
-      SELECT * FROM NOTICE WHERE NOTICE_NUM = #{noticeNum}
+      	SELECT * FROM NOTICE WHERE NOTICE_NUM = #{noticeNum}
     </select>
+    
+    <insert id="register">
+		INSERT INTO NOTICE(TITLE, CONTENT, IMG) VALUES(#{title}, #{content}, #{img})
+    </insert>
+    
 
   </mapper>
