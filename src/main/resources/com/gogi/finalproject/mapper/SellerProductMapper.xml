@@ -28,17 +28,18 @@
 	
 	<insert id="insert">
         INSERT INTO product1(origin, unit, meat_type, meat_part, product_name, product_price, store_id)
-        VALUES( #{origin}, #{unit}, #{writer}, #{writer}, #{writer}, #{writer}, #{writer}, #{writer}, #{writer} )
+        VALUES( #{origin}, #{unit}, #{meat_type}, #{meat_part}, #{product_name}, #{product_price}, #{store_id} )
     </insert>
 
 
     <insert id="insertSelectKey">
         <selectKey keyProperty="bno" order="BEFORE" resultType="int">
-            SELECT "ISEQ$$_256756".nextval FROM dual
+            SELECT "PRODUCT_SEQ".nextval FROM dual
         </selectKey>
 
-        INSERT INTO tbl_board(bno, title, content, writer)
-        VALUES( #{bno}, #{title}, #{content}, #{writer} )        
+		INSERT INTO product1(origin, unit, meat_type, meat_part, product_name, product_price, store_id)
+        VALUES( #{origin}, #{unit}, #{meat_type}, #{meat_part}, #{product_name}, #{product_price}, #{store_id} )
+      
     </insert>
 
 </mapper>

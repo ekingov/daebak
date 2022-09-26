@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gogi.finalproject.domain.Criteria;
+import com.gogi.finalproject.domain.SellerProductDTO;
 import com.gogi.finalproject.domain.SellerProductVO;
 import com.gogi.finalproject.exception.DAOException;
 import com.gogi.finalproject.exception.ServiceException;
@@ -53,6 +54,19 @@ public class SellerProductServiceImpl implements SellerProductService{
 			throw new ServiceException(e);
 		}
 	}
+	
+	@Override
+	public boolean register(SellerProductDTO dto) throws ServiceException {
+		log.trace("register({}) invoked.", dto);
+		
+		// 핵심 비지니스 로직 구현
+		try {
+//			return this.mapper.insert(dto) == 1;
+			return this.mapper.insertSelectKey(dto) == 1;
+		} catch(Exception e) {
+			throw new ServiceException(e);
+		} // try-catch
+	} // register
 	
 	
 } // end class
