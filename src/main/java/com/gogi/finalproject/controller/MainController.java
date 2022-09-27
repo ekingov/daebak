@@ -15,6 +15,6 @@ public class MainController {
 	@GetMapping("/main")
 	public void mainHandler() {
 		log.info("메인 화면입니다.");
-	}
+	}//
 	
 } // end class
