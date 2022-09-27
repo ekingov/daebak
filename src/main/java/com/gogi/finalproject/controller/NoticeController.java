@@ -68,7 +68,7 @@ public class NoticeController {
 	} // registerPage
 	
 	@PostMapping("/register")
-	public void register(NoticeDTO dto, RedirectAttributes rttrs) throws ControllerException {
+	public String register(NoticeDTO dto, RedirectAttributes rttrs) throws ControllerException {
 		log.trace("register() invoked.");
 		
 		try {
@@ -76,6 +76,7 @@ public class NoticeController {
 
 			rttrs.addAttribute("result", (isRegister)? "작성완료" : "오류가 발생했습니다.");			
 
+			return "redirect:/notice/list";
 		} catch (Exception e) {
 			throw new ControllerException(e);
 		}
