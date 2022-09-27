@@ -19,7 +19,7 @@
             console.clear();
 
             $('#listBtn').on('click', function () {
-                self.location.href = "/notie/list";
+                self.location.href = "/notice/list";
             }); // .onclick
 
         }) 
@@ -28,7 +28,7 @@
             console.clear();
 
             $('#modifyBtn').on('click', () => {
-                self.location.href = "/notice/modify?noticeNum=${noticeNum}";
+                self.location.href = "/notice/modify?noticeNum=${notice.noticeNum}";
             }); // .onclick
 
         }) 
