@@ -47,7 +47,6 @@ public class LogoutInterceptor implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest req, HttpServletResponse res, Object handler, ModelAndView modelAndView) throws Exception {
 		log.trace("2. postHandle(req, res, {}, {}) invoked.", handler, modelAndView);
 		
-		
 	} // postHandle
 
 	

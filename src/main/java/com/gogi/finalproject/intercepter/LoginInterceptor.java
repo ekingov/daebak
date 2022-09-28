@@ -36,7 +36,6 @@ public class LoginInterceptor implements HandlerInterceptor {
 	} // preHandle
 
 	
-	
 	@Override
 	public void postHandle(HttpServletRequest req, HttpServletResponse res, Object handler, ModelAndView modelAndView) throws Exception {
 		log.trace("2. postHandle(req, res, {}, {}) invoked.", handler, modelAndView);
@@ -56,7 +55,6 @@ public class LoginInterceptor implements HandlerInterceptor {
 			
 		} // if
 	} // postHandle
-
 
 	@Override
 	public void afterCompletion(HttpServletRequest req, HttpServletResponse res, Object handler, Exception e) throws Exception {
