@@ -27,7 +27,7 @@
         <!-- header -->
         <div class="header">
             
-            <h1 class="website-logo header-item">로고자리</h1>
+            <h1 class="website-logo header-item"><img src="/resources/img/logo2.png" width="500px"></h1>
 
             <form class="search-form header-item" action="">
                 <input type="search">

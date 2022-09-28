@@ -28,18 +28,32 @@
 	
 	<insert id="insert">
         INSERT INTO product1(origin, unit, meat_type, meat_part, product_name, product_price, store_id)
-        VALUES( #{origin}, #{unit}, #{meat_type}, #{meat_part}, #{product_name}, #{product_price}, #{store_id} )
+        VALUES( #{origin}, #{unit}, #{meatType}, #{meat_part}, #{product_name}, #{product_price}, #{store_id} )
     </insert>
 
 
     <insert id="insertSelectKey">
-        <selectKey keyProperty="bno" order="BEFORE" resultType="int">
+        <selectKey keyProperty="productNum" order="BEFORE" resultType="int">
             SELECT "PRODUCT_SEQ".nextval FROM dual
         </selectKey>
 
-		INSERT INTO product1(origin, unit, meat_type, meat_part, product_name, product_price, store_id)
-        VALUES( #{origin}, #{unit}, #{meat_type}, #{meat_part}, #{product_name}, #{product_price}, #{store_id} )
+		INSERT INTO product1(product_num, origin, unit, meat_type, meat_part, product_name, product_price, store_id)
+        VALUES( #{productNum}, #{origin}, #{unit}, #{meatType}, #{meatPart}, #{productName}, #{productPrice}, #{storeId} )
       
     </insert>
+    
+    <update id="update">
+        UPDATE product1
+        SET
+            origin = #{origin},
+            unit = #{unit},
+            meat_type = #{meatType},
+            meat_part = #{meatPart},
+            product_name = #{productName},
+            product_price = #{productPrice},
+            store_id = #{storeId}
+        WHERE
+            product_num = #{productNum}
+    </update>
 
 </mapper>
