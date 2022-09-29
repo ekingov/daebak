@@ -74,7 +74,7 @@ public class NoticeController {
 		try {
 			boolean isRegister = this.service.register(dto);
 
-			rttrs.addAttribute("result", (isRegister)? "작성완료" : "오류가 발생했습니다.");			
+			rttrs.addAttribute("result", (isRegister)? "작성완료" : "잠시 후 다시 시도해주세요.");			
 
 			return "redirect:/notice/list";
 		} catch (Exception e) {

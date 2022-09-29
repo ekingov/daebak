@@ -81,12 +81,15 @@
             <div class="main-container">
 
                 <div class="aside-bar">
+                    <ul class="aside-menu-title">
+                        <li class="aside-menu-title-item"><p>고객센터</p></li>
+                    </ul>
                     <ul class="aside-menu">
                         <li class="aside-menu-item">
-                            <a href="/notice/list" class="aside-menu-link" >공지사항</a>
+                            <a href="/notice/list" class="aside-menu-link">공지사항</a>
                         </li>
-                        <li class="aside-menu-item">
-                            <a href="qna.html" class="aside-menu-link">QnA</a>
+                        <li class="aside-menu-item-selected">
+                            <p class="aside-menu-link" style="margin-bottom: 0;">QnA</p>
                         </li>
                         <li class="aside-menu-item">
                             <a href="faq.html" class="aside-menu-link">FAQ</a>
@@ -145,21 +148,23 @@
 
                     <div class="pager">
                         <c:if test="${pageMaker.prev}">
-                            <span class="btn btn-prev"><a href="/qna?currPage=${pageMaker.startPage - 1}">이전</a></span>
+                            <span class="btn btn-prev"><a href="/qna/list?currPage=${pageMaker.startPage - 1}">이전</a></span>
                         </c:if>
                             
-                        <ul class="-list-">
+                        <ul class="pageList">
                             <c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                                <li class=${pageMaker.cri.currPage == pageNum ? 'currPage' : ''}><a class="-text-" href="/qna?currPage=${pageNum}">${pageNum}</a></li>
+                                <li class=${pageMaker.cri.currPage == pageNum ? 'currPage' : ''}><a class="-text-" href="/qna/list?currPage=${pageNum}" style="padding: 3px 6px; margin: 3px; font-size: 20px;">${pageNum}</a></li>
                             </c:forEach>
                         </ul>
                             
             
                         <c:if test="${pageMaker.next}">
-                            <span class="btn btn-next"><a href="/qna?currPage=${pageMaker.endPage + 1}">다음</a></span>
+                            <span class="btn btn-next"><a href="/qna/list?currPage=${pageMaker.endPage + 1}">다음</a></span>
                         </c:if>
                             
                     </div>
+
+                    <button type="button" id="regBtn">글 작성</button>
                 </div>
             </div>
 
@@ -169,7 +174,25 @@
 
     </div>
     
-    <script src="resources/js/clickMenuHandler.js"></script> 
+    <script>
+        $(function () {
+            console.clear();
+
+            $('#regBtn').on('click', function () {
+                self.location.href = "/qna/new";
+            }); // .onclick
+            
+            var result = "${param.result}";
+
+            if(result != null && result.length > 0) {
+                alert(result);
+            }
+
+        }) 
+    </script>
+    
+    <script src="/resources/js/clickMenuHandler.js"></script> 
+    <script src="/resources/js/getResult.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
