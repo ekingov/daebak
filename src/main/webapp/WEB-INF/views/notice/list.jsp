@@ -160,6 +160,9 @@
                         </c:if>
                             
                     </div>
+
+                    <button type="button" id="regBtn">글 작성</button>
+
         
                 </div>
             </div>
@@ -169,6 +172,18 @@
         <div class="footer">footer 부분</div>
 
     </div>
+
+
+    <script>
+        $(function () {
+            console.clear();
+
+            $('#regBtn').on('click', function () {
+                self.location.href = "/notice/new";
+            }); // .onclick
+
+        }) 
+    </script>
     
     <script src="/resources/js/clickMenuHandler.js"></script> 
     <script src="/resources/js/getResult.js"></script>
