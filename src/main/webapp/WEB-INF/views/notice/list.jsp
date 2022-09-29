@@ -181,6 +181,12 @@
             $('#regBtn').on('click', function () {
                 self.location.href = "/notice/new";
             }); // .onclick
+            
+            var result = "${param.result}";
+
+            if(result != null && result.length > 0) {
+                alert(result);
+            }
 
         }) 
     </script>
