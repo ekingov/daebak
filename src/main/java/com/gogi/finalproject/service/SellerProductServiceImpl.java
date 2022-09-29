@@ -68,5 +68,31 @@ public class SellerProductServiceImpl implements SellerProductService{
 		} // try-catch
 	} // register
 	
+	@Override
+	public boolean modify(SellerProductDTO dto) throws ServiceException {
+		log.trace("modify({}) invoked.", dto);
+		
+		// 핵심 비지니스 로직 구현
+		try {
+			return this.mapper.update(dto) == 1;
+		} catch(Exception e) {
+			throw new ServiceException(e);
+		} // try-catch
+	} // modify
+
+	@Override
+	public boolean remove(SellerProductDTO dto) throws ServiceException {
+		log.trace("remove({}) invoked.", dto);
+		
+		// 핵심 비지니스 로직 구현
+		try {
+			return this.mapper.delete(dto.getProductNum()) == 1;
+		} catch(Exception e) {
+			throw new ServiceException(e);
+		} // try-catch
+	} // remove
+	
+	
+	
 	
 } // end class

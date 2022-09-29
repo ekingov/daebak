@@ -16,4 +16,10 @@ public interface SellerProductService {
 	public abstract SellerProductVO get(Integer ProductNum) throws ServiceException;
 	
 	public abstract boolean register(SellerProductDTO dto) throws ServiceException;
+	
+	
+	public abstract boolean modify(SellerProductDTO dto) throws ServiceException;
+	
+
+	public abstract boolean remove(SellerProductDTO dto) throws ServiceException;
 } // end interface

@@ -126,7 +126,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <div class="logo">LOGO</div>
+            <div class="logo"><img src="/resources/img/logo2.png" width="300px"></div>
             <div class="logo_admin">판매자 어드민</div>
             <div class="nav_container">
                 <ul class="nav_menu">

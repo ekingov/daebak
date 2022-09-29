@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,12 @@ public class SellerProductController {
 		
 	}
 	// ----------------------상품 추가----------------------------
+	@GetMapping("/new")
+	public void registerPage() {
+		log.trace("register() invoked.");
+	} // registerPage
+	
+	
 	@PostMapping("/register")
 	public String register(SellerProductDTO dto, RedirectAttributes rttrs) throws ControllerException {
 		log.trace("register({}) invoked.", dto);
@@ -81,49 +88,47 @@ public class SellerProductController {
 //	} // register
 	
 	
-//	@PatchMapping("/{QnaId}/modify")
-//	public String modify(@PathVariable Integer QnaId , QnaDTO dto, Criteria cri, RedirectAttributes rttrs) throws ControllerException {
-//		log.trace("modify({}) invoked.", dto);
-//		
-//		try {			
-//			boolean isModify = this.service.modify(dto);
-//			log.info("\t+ isModify: {}", isModify);
-//			
-//			// 1. Session Scope 에 아래의 이름과 값으로 바인딩해서 전달(공유)
-////			rttrs.addFlashAttribute("result", (isModify)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
-//			
-//			// 2. 권장: Get방식의 전송파라미터(즉, Query String 형태로 전달, 예 ?result=FAILURE)
-//			rttrs.addAttribute("result", (isModify)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
-//			
-//			return "redirect:/board/list?currPage="+cri.getCurrPage();		// Re-direct to the board list.
-//		} catch(Exception e) {
-//			throw new ControllerException(e);
-//		} // try-catch
-//	} // modify
+	@PatchMapping("/{ProductNum}/modify")
+	public String modify(@PathVariable Integer ProductNum , SellerProductDTO dto, Criteria cri, RedirectAttributes rttrs) throws ControllerException {
+		log.trace("modify({}) invoked.", dto);
+		
+		try {			
+			boolean isModify = this.service.modify(dto);
+			log.info("\t+ isModify: {}", isModify);
+			
+			// 1. Session Scope 에 아래의 이름과 값으로 바인딩해서 전달(공유)
+//			rttrs.addFlashAttribute("result", (isModify)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
+			
+			// 2. 권장: Get방식의 전송파라미터(즉, Query String 형태로 전달, 예 ?result=FAILURE)
+			rttrs.addAttribute("result", (isModify)? "SUCCESS("+dto.getProductNum()+")" : "FAILURE");
+			
+			return "redirect:/seller_product?currPage="+cri.getCurrPage();		// Re-direct to the board list.
+		} catch(Exception e) {
+			throw new ControllerException(e);
+		} // try-catch
+	} // modify
 	
 	
-//	@PostMapping("/remove")
-//	public String remove(QnaDTO dto, Criteria cri, RedirectAttributes rttrs) throws ControllerException {
-//		log.trace("remove({}) invoked.", dto);
-//		
-//		try {			
-//			boolean isRemove = this.service.remove(dto);
-//			log.info("\t+ isRemove: {}", isRemove);
-//			
-//			// 1. Session Scope 에 아래의 이름과 값으로 바인딩해서 전달(공유)
-////			rttrs.addFlashAttribute("result", (isModify)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
-//			
-//			// 2. 권장: Get방식의 전송파라미터(즉, Query String 형태로 전달, 예 ?result=FAILURE)
-//			rttrs.addAttribute("result", (isRemove)? "SUCCESS("+dto.getBno()+")" : "FAILURE");
-//			
-//			return "redirect:/board/list?currPage=" + cri.getCurrPage();		// Re-direct to the board list.
-//		} catch(Exception e) {
-//			throw new ControllerException(e);
-//		} // try-catch
-//	} // remove
+	@GetMapping("/{ProductNum}/remove")
+	public String remove(SellerProductDTO dto, Criteria cri, RedirectAttributes rttrs) throws ControllerException {
+		log.trace("remove({}) invoked.", dto);
+		
+		try {			
+			boolean isRemove = this.service.remove(dto);
+			log.info("\t+ isRemove: {}", isRemove);
+			
+			
+			// 2. 권장: Get방식의 전송파라미터(즉, Query String 형태로 전달, 예 ?result=FAILURE)
+			rttrs.addAttribute("result", (isRemove)? "SUCCESS("+dto.getProductNum()+")" : "FAILURE");
+			
+			return "redirect:/seller_product?currPage=" + cri.getCurrPage();		// Re-direct to the board list.
+		} catch(Exception e) {
+			throw new ControllerException(e);
+		} // try-catch
+	} // remove
 	
 	
-	@GetMapping("/{ProductNum}")
+	@GetMapping("/{ProductNum}/modify")
 	public void get(@PathVariable Integer ProductNum, Criteria cri, Model model) throws ControllerException {
 		log.trace("get({}, {}) invoked.", ProductNum, cri);
 		

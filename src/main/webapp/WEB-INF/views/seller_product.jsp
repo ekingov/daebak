@@ -180,6 +180,10 @@
     </style>
     <link rel="stylesheet" href="resources/css/header_footer.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+
     <script>
         $(function () {
             console.clear();
@@ -196,7 +200,7 @@
 
 <body>
     <header>
-        <div class="logo">LOGO</div>
+        <div class="logo"><img src="/resources/img/logo2.png" width="300px"></div>
         <div class="logo_admin">판매자 어드민</div>
         <div class="nav_container">
             <ul class="nav_menu">
@@ -235,7 +239,7 @@
 
         <div class="content_button">
             <button type="button" id="productAdd">+ 상품 추가</button>
-            <button type="button" id="productDelete">- 상품 삭제</button>
+
         </div>
 
         <table class="tg">
@@ -261,7 +265,10 @@
                         <td>${product.meatPart}</td>
                         <td>${product.productName}</td>
                         <td>${product.productPrice}</td>
-                        <td><button type="button" onclick="location.href='/seller_product/${product.productNum};'">수정</button></td>
+                        <td>
+                            <button type="button" onclick="location.href='/seller_product/${product.productNum}/modify;'">수정</button>
+                            <button type="button" onclick="location.href='/seller_product/${product.productNum}/remove;'">삭제</button>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>

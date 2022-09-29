@@ -229,7 +229,7 @@
     </header>
 
     <div class="wrapper">
-        <form action="/seller_product/register" method="POST">
+        <form action="/seller_product/modify" method="POST">
             <!-- 등록 처리시에는, 페이징과 관련된 현재페이지 기준값 전송파라미터를 같이 전송하면 안됨! -->
             <!-- 게시판 목록의 가장 처음페이지로 이동되게 해야, 새로이 등록된 게시글을 확인할 수 있기 때문 -->
             <!-- <input type="hidden" name="currPage" value="${param.currPage}"> -->
