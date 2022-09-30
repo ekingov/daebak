@@ -160,10 +160,10 @@
     font-size: 20px;
     display: block;
 }
-.aside-menu-item:nth-of-type(1){
+/* .aside-menu-item:nth-of-type(1){
     box-shadow: 0 0 2px 1px pink;
     background-color: rgba(255, 192, 203, 0.401);
-}
+} */
 
 .notice-container{
     border: 2px solid rgba(128, 128, 128, 0.308);

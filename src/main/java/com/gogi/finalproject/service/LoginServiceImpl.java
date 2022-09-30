@@ -22,4 +22,4 @@ public class LoginServiceImpl implements LoginService {
 		return null;
 	}//findUser
 
-}//endclass
+}//end class
