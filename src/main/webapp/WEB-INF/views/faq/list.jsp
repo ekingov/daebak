@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="/resources/css/basic.css">
     <link rel="stylesheet" href="/resources/css/basicMedia.css">
-    <link rel="stylesheet" href="/resources/css/qna.css">
+    <link rel="stylesheet" href="/resources/css/notice.css">
 
 </head>
 
@@ -88,18 +88,18 @@
                         <li class="aside-menu-item">
                             <a href="/notice/list" class="aside-menu-link">공지사항</a>
                         </li>
-                        <li class="aside-menu-item-selected">
-                            <p class="aside-menu-link" style="margin-bottom: 0;">QnA</p>
-                        </li>
                         <li class="aside-menu-item">
-                            <a href="/faq/list" class="aside-menu-link">FAQ</a>
+                            <a href="/qna/list" class="aside-menu-link">QnA</a>
+                        </li>
+                        <li class="aside-menu-item-selected">
+                            <p class="aside-menu-link" style="margin-bottom: 0;">FAQ</p>
                         </li>
                     </ul>
                 </div>
     
                 <div class="notice-container">
                     
-                    <h2 class="notice-name">QnA</h2>
+                    <h2 class="notice-name">FAQ</h2>
 
                     <div class="search-form">
                         <form class="table-form">
@@ -126,45 +126,44 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="qna" items="${list}" >
-	                            <tr>
-	                                <td>${qna.qnaNum}</td>
-	                                <td class="title"><a href="/qna/getQna?faqNum=${qna.qnaNum}">${qna.title}</a></td>
-	                                <td>작성자(조인을 통해서 바꿀 필요가 있음)</td>
-	                                <td>
-	                                    <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${qna.registerDate}"/>
-	                                </td>
-	                                <td>조회수 데이터 생성해야</td>
-	                            </tr>                            
-                            </c:forEach>
-                            
+                                <c:forEach var="faq" items="${list}">
+                                    <tr>
+                                        <td>${faq.faqNum}</td>
+                                        <td><a href="/faq/getFaq?faqNum=${faq.faqNum}">${faq.title}</a></td>
+                                        <td>관리자</td>
+                                        <td> <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${faq.registerDate}" /></td>
+                                        <td></td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
-        	
-        			<div class="indexer">
+                    
+                    <div class="indexer">
                         <div><span class="">${pageMaker.cri.currPage}</span> / ${pageMaker.realEndPage} pages</div>
                     </div>
 
                     <div class="pager">
                         <c:if test="${pageMaker.prev}">
-                            <span class="btn btn-prev"><a href="/qna/list?currPage=${pageMaker.startPage - 1}">이전</a></span>
+                            <span class="btn btn-prev"><a href="/faq/list?currPage=${pageMaker.startPage - 1}">이전</a></span>
                         </c:if>
                             
                         <ul class="pageList">
                             <c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                                <li class=${pageMaker.cri.currPage == pageNum ? 'currPage' : ''}><a class="-text-" href="/qna/list?currPage=${pageNum}" style="padding: 3px 6px; margin: 3px; font-size: 20px;">${pageNum}</a></li>
+                                <li class=${pageMaker.cri.currPage == pageNum ? 'currPage' : ''}><a class="-text-" href="/faq/list?currPage=${pageNum}" style="padding: 3px 6px; margin: 3px; font-size: 20px;">${pageNum}</a></li>
                             </c:forEach>
                         </ul>
                             
             
                         <c:if test="${pageMaker.next}">
-                            <span class="btn btn-next"><a href="/qna/list?currPage=${pageMaker.endPage + 1}">다음</a></span>
+                            <span class="btn btn-next"><a href="/faq/list?currPage=${pageMaker.endPage + 1}">다음</a></span>
                         </c:if>
                             
                     </div>
 
                     <button type="button" id="regBtn">글 작성</button>
+
+        
                 </div>
             </div>
 
@@ -173,13 +172,14 @@
         <div class="footer">footer 부분</div>
 
     </div>
-    
+
+
     <script>
         $(function () {
             console.clear();
 
             $('#regBtn').on('click', function () {
-                self.location.href = "/qna/new";
+                self.location.href = "/faq/new";
             }); // .onclick
             
             var result = "${param.result}";

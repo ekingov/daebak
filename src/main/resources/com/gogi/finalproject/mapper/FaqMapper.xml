@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+  <mapper namespace="com.gogi.finalproject.mapper.FaqMapper">    
+
+    <select id="selectAllList" resultType="com.gogi.finalproject.domain.FaqVO">
+        SELECT /*+ index_desc(FAQ) */ *
+        FROM FAQ
+        OFFSET (#{currPage} - 1) * #{amount} ROWS
+        FETCH NEXT #{amount} ROWS ONLY
+    </select>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT /*+ index(FAQ) */ count(FAQ_NUM)
+        FROM FAQ
+    </select>
+
+    <select id="selectListOne" resultType="com.gogi.finalproject.domain.FaqVO">
+      	SELECT * FROM FAQ WHERE FAQ_NUM = #{faqNum}
+    </select>
+    
+    <insert id="register">
+		INSERT INTO FAQ(TITLE, CONTENT, WRITER) VALUES(#{title}, #{content}, #{writer})
+    </insert>
+    
+
+  </mapper>
