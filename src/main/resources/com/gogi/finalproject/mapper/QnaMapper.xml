@@ -1,32 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
- 
-<mapper namespace="com.gogi.finalproject.mapper.QnaMapper">
-	 <select id="selectListWithPaging" resultType="com.gogi.finalproject.domain.QnaVO">
-	
-	SELECT /*+ index_desc(qna1) */  *
-	       FROM qna1
-	       OFFSET(#{currPage}-1)*#{amount} ROWS
-	       FETCH NEXT #{amount} ROWS ONLY
-	       
-	 </select> 
-  
-	 <select id="getTotalCount" resultType="int">
-	    SELECT /*+ index(qna1) */ count(QNA_NUM)
-	    FROM qna1
-	</select>
-	
-	<!-- <insert id="insert">
-		INSERT INTO qna1()
-	</insert> -->
-	
-	<select id="select" resultType="com.gogi.finalproject.domain.QnaVO">
-		SELECT * FROM qna1 WHERE qna_num = #{qnaId}
-	</select>
 
-</mapper>
+
+  <mapper namespace="com.gogi.finalproject.mapper.QnaMapper">    
+
+    <select id="selectAllList" resultType="com.gogi.finalproject.domain.QnaVO">
+        SELECT /*+ index_desc(QNA) */ *
+        FROM QNA
+        OFFSET (#{currPage} - 1) * #{amount} ROWS
+        FETCH NEXT #{amount} ROWS ONLY
+    </select>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT /*+ index(QNA) */ count(QNA_NUM)
+        FROM QNA
+    </select>
+
+    <select id="select" resultType="com.gogi.finalproject.domain.QnaVO">
+      	SELECT * FROM QNA WHERE QNA_NUM = #{qnaNum}
+    </select>
+    
+    <insert id="register">
+		INSERT INTO QNA(TITLE, QNA_CATEGORY, CONTENT, USER_NUM, ANSWER_CHECK, IS_SECRET) VALUES(#{title}, #{qnaCategory}, #{content}, #{userNum}, #{answerCheck}, #{isSecret})
+    </insert>
+    
+
+  </mapper>
