@@ -43,7 +43,7 @@ public class QnaDAOTests {
 		cri.setCurrPage(1);
 		cri.setAmount(10);
 		
-		List<QnaVO> list = this.mapper.selectListWithPaging(cri);
+		List<QnaVO> list = this.mapper.selectAllList(cri);
 		
 		list.forEach(log::info);
 	}
