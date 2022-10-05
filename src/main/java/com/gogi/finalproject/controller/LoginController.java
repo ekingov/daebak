@@ -35,11 +35,11 @@ public class LoginController {
 		if(vo != null ) { //로그인 성공
 			model.addAttribute(SharedScopeKeys.LOGIN_KEY, vo);
 			
-			return "WEB-INF/resources/views/main.jsp";
+			return "/main";
 		} else { //로그인 실패
 			rttrs.addFlashAttribute(SharedScopeKeys.LOGIN_RESULT, "Login Failed");
 		
-			return "redirect:/login/into";
+			return "redirect:/login/intoLogin";
 		}//if-else
 	}//login
 	
