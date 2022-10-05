@@ -65,7 +65,7 @@
         <div class="nav">
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="" class="menu-link" >시세</a>
+                    <a href="/marketPrice/select" class="menu-link" >시세</a>
                 </li>
                 <li class="menu-item">
                     <a href="" class="menu-link">MAP</a>
