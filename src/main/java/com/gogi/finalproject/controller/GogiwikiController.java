@@ -29,4 +29,16 @@ public class GogiwikiController {
 		log.info("돼지 선택입니다.");
 	}
 	
+	@GetMapping("/part1")
+	public void dummyHandler() {
+		log.info("소 선택입니다.");
+	}
+	
+	@GetMapping("/part2")
+	public void dummy2Handler() {
+		log.info("돼지 선택입니다.");
+	}
+	
+	
+	
 } // end class
